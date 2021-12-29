@@ -1,0 +1,19 @@
+/* Color Theme Swatches in RGBA */
+$cdr: rgb(32, 32, 32);
+$cbr: rgba(211,202,186, 1);
+$cwh: rgba(242,242,242, 1);
+$cor: rgba(242,172,21, 1);
+$cli: rgba(43,140,131, 1);
+
+
+@mixin changeColor {
+    transition: all 0.5s ease-out;
+}
+@function set-text-color($color){  // decide to change color mode
+    @if(lightness($color)>40){
+        @return $cdr;
+    } @else{
+        @return $cli;
+    }
+}
+
